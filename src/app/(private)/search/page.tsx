@@ -1,4 +1,3 @@
-"use client";
 import { searchUsers } from "@/server-actions/users";
 import { searchPosts } from "@/server-actions/posts";
 import { Button, Input, Radio, message } from "antd";
@@ -9,8 +8,8 @@ import { debounce } from "lodash";
 
 function SearchPage() {
   const [searchFor, setSearchFor] = useState<"users" | "posts">("users");
-  const [users, setUsers] = useState([]);
-  const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState<any[]>([]); // Assuming UserType[], adjust as per your interface
+  const [posts, setPosts] = useState<any[]>([]); // Assuming PostType[], adjust as per your interface
   const [searchValue, setSearchValue] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -45,7 +44,7 @@ function SearchPage() {
   }, [searchFor]);
 
   // Debounce search handler to avoid excessive API calls
-  const debounceSearchHandler = debounce(async (value) => {
+  const debounceSearchHandler = debounce(async (value: string) => {
     try {
       setLoading(true);
       let response = null;
@@ -71,7 +70,7 @@ function SearchPage() {
   }, 500); // 500ms debounce delay
 
   // Handle input change and trigger debounce search
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchValue(value);
     debounceSearchHandler(value);
@@ -89,7 +88,11 @@ function SearchPage() {
           onChange={handleInputChange}
           placeholder="Search Users, Posts, Hashtags"
         />
-        <Button type="primary" onClick={() => debounceSearchHandler(searchValue)} loading={loading}>
+        <Button
+          type="primary"
+          onClick={() => debounceSearchHandler(searchValue)}
+          loading={loading}
+        >
           Search
         </Button>
       </div>
