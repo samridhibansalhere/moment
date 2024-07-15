@@ -1,3 +1,4 @@
+"use client"
 import { searchUsers } from "@/server-actions/users";
 import { searchPosts } from "@/server-actions/posts";
 import { Button, Input, Radio, message } from "antd";
