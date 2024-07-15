@@ -1,7 +1,7 @@
 import Spinner from "@/components/spinner";
 import { UserType } from "@/interfaces";
 import { getFollowingOfUser, rejectFollower } from "@/server-actions/users";
-import { Modal, message } from "antd";
+import { Button, Modal, message } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
