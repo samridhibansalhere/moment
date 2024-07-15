@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500..900;1,500..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+.drawer {
+  background-color: black !important;
+}
+
+.cl-card {
+  box-shadow: none !important;
+}
+.cl-internal-180wb59{
+  display:none;
+}
+.lucide {
+  cursor: pointer !important;
+}
+
+/* scrooller styling */
+
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bebebe !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1 !important;
+}
