@@ -5,7 +5,7 @@ import PostModel from "@/models/post-model";
 import { getCurrentUserFromMongoDB } from "./users";
 import { revalidatePath } from "next/cache";
 import UserModel from "@/models/user-model";
-
+import { PostType } from "@/interfaces";
 connectToMongoDB();
 
 export const uploadNewPost = async (payload: any) => {
