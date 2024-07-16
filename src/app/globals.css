@@ -18,7 +18,9 @@ html {
 .drawer {
   background-color: black !important;
 }
-
+.ant-drawer-close{
+  color:white !important;
+}
 .cl-card {
   box-shadow: none !important;
 }
